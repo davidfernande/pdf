@@ -1,0 +1,11 @@
+json.version "1.0"
+json.huertos do
+  json.array!(@huertos) do |json,huerto|
+    json.device_label  (huerto.agrupacion || "")
+    json.latitude huerto.y.to_f
+    json.longitude huerto.x.to_f
+    json.icon "http://75.101.167.227/sites/all/themes/tb_sirate/js/img/LABELMAPA032.png"
+    json.html "<div style='height:140px;width:180px;font-size: 12px;'><h2>Huerto Solar:</h2><p><b>" + (huerto.agrupacion || "") + "</b><br>" + (huerto.municipio || "") + "<br>" + (huerto.provincia || "") + "</p><a href='http://conectados-al-sol.yelouluz.com/huertopublico/"  + (huerto.agrupacion || "") + "'> Contratar >></a></div>" 
+  end
+end
+

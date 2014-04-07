@@ -1,0 +1,62 @@
+
+	
+
+
+<div class="form">
+	
+
+
+	
+<%= form_for(@huerto, :url => { :action => "create_from_file" }, :html => {:id => 'formIDAdv', :multipart => true } ) do |f| %>
+  <% if @huerto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@huerto.errors.count, "error") %> no permitieron crear los huertos</h2>
+
+      <ul>
+      <% @huerto.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+<div class="clearfix">
+	<label><%= 'Huertos' %></label>
+    <div class="input" title="Seleccione un archivo con los huertos a crear" rel="tooltips">
+    	<%= file_field 'upload', 'datafile' %>
+    </div>
+</div>
+<p></p>
+                       
+  	<div class="clearfix grey-highlight">                      
+   		<div class="input no-label ">    
+   			<%= f.submit 'Crear' , :id => 'btck', :class => :"blue button"%>
+   		<div>
+  </div>
+<% end %>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+    
+
+</div>
+
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none;'>
+			<div id='inline_content' style='padding:10px; background:#fff;text-align:center;'>
+				<p><strong>Espere por favor, mientras se procesa el archivo.</strong></p>
+				<p><%= image_tag 'spinner.gif', :id => 'spinnerdiv'  %></p>
+			</div>
+			
+		</div>
+

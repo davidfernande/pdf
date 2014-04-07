@@ -1,0 +1,24 @@
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal', :id => "form_id"  }) do |f| %>
+
+
+			<form class="form-horizontal" action='' method="POST">
+			  <fieldset>
+			    <div id="legend">
+			      <h2 class="titulo">Registrarse</h2>
+			    </div>
+			    <div class="control-group">
+				  <%= f.error_notification %>
+				  <%= display_base_errors resource %>
+				  <%= f.input :name, label:"Nombre", :autofocus => true, :input_html => { :class => 'span3 validate[required] input-xlarge'}  %>
+				  <%= f.input :email, label:"email", :required => true, :input_html => { :class => 'span3 validate[required] input-xlarge'}  %>
+				  <%= f.input :password, label:"Contraseña",:required => true, :input_html => { :class => 'span3 validate[required] input-xlarge'}  %>
+				  <%= f.input :password_confirmation,label:"Confirmación de Contraseña", :required => true, :input_html => { :class => 'span3 validate[required] input-xlarge'}  %>
+				  	      
+			      <div class="controls">
+			      	 <%= f.button :submit, 'Registrarse', :class => 'btn-primary  btn-success' %>	
+			      </div>
+			      <%= render "devise/shared/links" %>
+			    </div>
+			  </fieldset>
+			</form>
+<% end %>

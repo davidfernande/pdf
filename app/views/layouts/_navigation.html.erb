@@ -1,0 +1,65 @@
+<%= link_to image_tag('http://www.yelouluz.com/sites/default/files/LOGO_YELOU_LUZ_140_43.jpg'), 'http://www.yelouluz.com', :class => 'brand' %>
+<ul class="nav">
+<% if user_signed_in? %>
+   <li class="dropdown">
+  		<a class="dropdown-toggle" id="dropnav"  data-toggle="dropdown" href="#">Mi Luz</a>
+  		<ul id='menu1' class="dropdown-menu" role="menu" aria-labelledby="dropnav">
+		  	<li><%= link_to 'Contratos', root_path  %></li>
+		  	<li><%= (link_to 'Altas', root_url ) if not ( ENV['RAILS_ENV'] == 'production' ) %></li>
+		  	<li><%= (link_to 'Bajas', root_url ) if not ( ENV['RAILS_ENV'] == 'production' ) %></li>
+		  	<li><%= (link_to 'Cambios', root_url ) if not ( ENV['RAILS_ENV'] == 'production' ) %></li>
+		  	<li><%= (link_to 'Contratos', contratos_url ) if not ( ENV['RAILS_ENV'] == 'production' )  %></li>
+		  	<li><%= (link_to 'Facturas', root_url ) if not ( ENV['RAILS_ENV'] == 'production' ) %></li>
+		  	<li><%= (link_to 'Certificados', root_url ) if not ( ENV['RAILS_ENV'] == 'production' ) %></li>
+		  </ul>
+  </li>
+  <li>
+  	<%= ( link_to 'Mis Ahorros', root_url ) if not ( ENV['RAILS_ENV'] == 'production' ) %>
+  </li>
+  <li>
+  	<%= ( link_to 'Mis Lecturas', root_url ) if not ( ENV['RAILS_ENV'] == 'production' ) %>
+  </li>
+  <li>
+  	<%= ( link_to 'Mis Informes', root_url ) if not ( ENV['RAILS_ENV'] == 'production' ) %>
+  </li>
+  <li>
+  	<%= ( link_to 'Consejos', root_url ) if not (  ENV['RAILS_ENV'] == 'production' ) %>
+  </li>
+  <% end %>
+  <li>
+  	<%= link_to 'Atención al cliente', 'http://www.yelouluz.com/?q=article/contactanos' %>
+  </li>
+    <li class="dropdown">
+  		<a class="dropdown-toggle" id="dropnav2"  data-toggle="dropdown" href="#">Mi Cuenta</a>
+  		<div class="triangle-3"></div>
+  		<ul id='menu2' class="dropdown-menu" role="menu" aria-labelledby="dropnav2">
+			<% if user_signed_in? %>
+				<li><%= link_to '<i class="icon-user"> </i> <span class="texto-lista">Editar Cuenta</span>'.html_safe, edit_user_registration_path %></li>
+				<li><%= link_to '<i class="icon-cog"> </i> <span class="texto-lista">Configuración</span>'.html_safe, root_url %></li>
+				<li><%= link_to '<i class="icon-info-sign"></i> <span class="texto-lista">  Ayuda</span>'.html_safe, root_url %></li>
+				<li><%= link_to '<i class="icon-off"> </i> <span class="texto-lista"> Salir</span>'.html_safe, destroy_user_session_path, :method=>'delete' %></li>		  
+			 <% else %>
+				<li><%= link_to 'Acceder', new_user_session_path %></li>
+				<li><%= link_to 'Registrarse', new_user_registration_path %></li>
+			<% end %>	
+		 </ul>
+  	</li> 
+	<% if user_signed_in? and current_user.has_role? :admin  %>
+    <li class="dropdown">
+  		<a class="dropdown-toggle" id="dropnav3"  data-toggle="dropdown" href="#">Admin</a>
+  		<div class="triangle-3"></div>
+  		<ul id='menu3' class="dropdown-menu" role="menu" aria-labelledby="dropnav3">
+				<li><%= link_to '<i class="icon-user"> </i> <span class="texto-lista">Usuarios</span>'.html_safe, users_path %></li>
+				<li><%= link_to '<i class="icon-cog"> </i> <span class="texto-lista">Productores</span>'.html_safe, users_path %></li>
+				<li><%= link_to '<i class="icon-info-sign"></i> <span class="texto-lista">Huertos</span>'.html_safe, huertos_url %></li>
+				<li><%= link_to '<i class="icon-wrench"></i> <span class="texto-lista">Configuración</span>'.html_safe, root_url %></li>
+				<li><%= link_to '<i class="icon-wrench"></i> <span class="texto-lista">Rails Admin</span>'.html_safe, rails_admin_url %></li>
+				<li><%= link_to '<i class="icon-off"> </i> <span class="texto-lista"> Salir</span>'.html_safe, destroy_user_session_path, :method=>'delete' %></li>	
+		 </ul>
+  	</li> 
+  	<% end %>
+</ul>
+
+
+
+

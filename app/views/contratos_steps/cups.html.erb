@@ -1,0 +1,195 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	//$("#form_id").validationEngine();
+    //$("#precontrato_suministro_cups").validationEngine('validate');
+	CalculateCuota();
+    
+
+//    $(document.body).click(function(){
+//		$('#form_id').validationEngine('hideAll');
+//	});
+
+});
+</script>
+        <h3 class="titulo">
+          Datos del Contrato
+        </h3>
+     <div class="row">
+     <div class="hero-unit span5">
+      <div class="row">
+      	<div class="span5">
+      		 
+	<%= simple_form_for @precontrato, :url => wizard_path, :method => :put, :html => { :class => 'form-horizontal', :id => "form_id" }  do |f| %>
+	<%= f.error_notification %>
+
+  	<div class="form-inputs">
+		<%= f.input :suministro_cups, :label=> "CUPS" , :wrapper => :append do %>
+			<%= f.input_field :suministro_cups, :class=>"validate[required,ajax[CUPSCall]]", required: true , :onBlur=>"RellenaCampos();" %><span class="add-on"><i class="icon-question-sign"></i></span>
+		<% end %>  	
+		<%= f.input :datossuministro_potencia, :label=> "Potencia contratada (kW)" , :wrapper => :append do %>
+    		<%= f.input_field :datossuministro_potencia, required: true, :class=>"validate[required]", :onBlur=>"CalculateCuota();" %><span class="add-on"><i class="icon-question-sign"></i></span>
+    	<% end %> 
+	    <%= f.input :datossuministro_consumoestimado,:label=> "Consumo estimado (kWh/mes)"	, :wrapper => :append do %>
+	    	<%= f.input_field :datossuministro_consumoestimado,  required: true, :class=>"validate[required],custom[number]", :onBlur=>"CalculateCuota();", :onchange=>"CalculateCuota();" %><span class="add-on"><i class="icon-question-sign"></i></span>
+	    <% end %> 
+	    <%= f.input :CosteMensualAlquilerContador, :label=> "Coste Alquiler Contador (€/mes)" , :wrapper => :append do %>
+	   		<%= f.input_field :CosteMensualAlquilerContador,  required: true, :class=>"validate[required],custom[number]", :onBlur=>"CalculateCuota();", :onchange=>"CalculateCuota();" %><span class="add-on"><i class="icon-question-sign"></i></span>
+	    <% end %> 
+	    <%= f.input :suministro_tarifa , :label=> "Tipo de cliente", :wrapper => :append do %> 
+	    	<%= f.input_field :suministro_tarifa, :value=> '2.0A', :readonly =>true   %><span class="add-on"><i class="icon-question-sign"></i></span>
+		<% end %> 
+
+    
+    <%= f.label 'Cuota' %> 
+    <div class="controls">
+
+    	<span style="float: left;padding-top: 5px; text-align: left;width: 160px;font-size: 14px;font-weight: normal;line-height: 20px;" id="CuotaT">.... euros al mes</span>
+    </div>
+
+    <%= f.label ' ' %> 
+	<%= f.label 'Huerto' %> 
+    <div class="controls">
+    	    
+    	<span style="float: left;padding-top: 5px; text-align: left;width: 160px;font-size: 14px;font-weight: normal;line-height: 20px;"><%=@datoshuerto.agrupacion%></span>
+	</div>
+
+  </div>
+  </div>
+  </div>
+  </div>  
+  <div class="span5">
+  	
+<style>
+.table th, .table td {
+    line-height: 12px;
+}
+</style>
+
+	<div class="row">
+		<small><div class="span5">
+			Desglose del cálculo de la cuota mensual:
+            <table class="table table-striped table-condensed">
+                  <thead>
+                  <tr>
+                      <th>Concepto</th>     
+                      <th>Valor euros</th>                                       
+                  </tr>
+              </thead>   
+              <tbody>
+                <tr>
+                    <td>Término de Potencia</td>
+                    <td id="TPT">....</td>                                       
+                </tr>
+                <tr>
+                    <td>Término de Energía Regulado</td>
+                    <td id="TERT">....</td>                                       
+                </tr>
+                <tr>
+                    <td>Término de Energía Yelou!luz</td>
+                    <td id="TEYT1">....</td>                                       
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Descuento Yelou!luz&nbsp;&nbsp;<span id="TEYD2"></span> %</td>
+                    <td id="TEYT2">....</td>                                       
+                </tr>     
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Descuento Prepago&nbsp;&nbsp;<span id="TEYD3"></span> %</td>
+                    <td id="TEYT3">....</td>                                       
+                </tr>                            
+                <tr>
+                    <td>Gestión Solar</td>
+                    <td id="GST1">....</td>                                        
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Descuento Yelou!luz&nbsp;&nbsp;<span id="GSD"></span> %</td>
+                    <td id="GST2">....</td>                                        
+                </tr>                
+                <tr>
+                    <td>Alquiler Contador</td>
+                    <td id="ACT">....</td>                                        
+                </tr>                
+                <tr>
+                    <td>Impuestos</td>
+                    <td id="IEET">....</td>                                       
+                </tr>
+                <tr>
+                    <td>IVA&nbsp;&nbsp;<span id="IVA"></span> %</td>
+                    <td id="IVAT">....</td>                                        
+                </tr> 
+                <tr>
+                    <td><b>Cuota Mensual</b></td>
+                    <td id="CuotaTT">...</td>                                        
+                </tr> 
+                                                                                  
+              </tbody>
+            </table>
+            </div></small>
+	</div> 
+ 	<p style="font-size: 14px;line-height: 15px;"><small>En tu cuota existe un término debido a la potencia contratada (Tp) y otro debido al consumo de energía previsto (Te).<br>
+  	A estos términos se les aplica un posible descuento (DTe) para que tu cuota se la mejor que te podamos ofrecer<br> 
+  	El hecho de que te proporcionemos energia 100% solar tendría un coste de mercado que denominamos Gestion Solar (Gs), 
+  	pero tranquilo que aquí también te podemos aplicar un descuento en función del tipo de contrato que tienes (DGs)<br>
+  	Tu contador puede ser en propiedad, lo menos habitual, o en alquiler a la compañía distibuidora, lo  que también representa un coste adicional (TCt)<br>
+  	A todo esto al final hay que sumarle los impuestos eléctricos y el IVA</small></p>
+	  	 
+<!--    	"TerminoPotenciaMensual":7.427<br />
+  	"TerminoEnergiaMensual":14.9327<br />
+  	"TerminoEnergiaYelouMensual":19.5327<br />
+  	"DescuentoTerminoEnergiaYelouPorcentaje":2.0<br />
+  	"DescuentoTerminoEnergiaYelouResultado":19.14<br />
+  	"DescuentoTerminoEnergiaYelouVigenciaEnMeses":12.0<br />
+  	"GestionSolarMensual":3.0<br>
+  	"DescuentoGestionSolarMensualPorcentaje":100.0<br />
+  	"DescuentoGestionSolarMensualResultado":0.0<br />
+  	"AlquilerContadorMensual":1.88,"SumaIVA":9.56<br />
+  	"SumaBasesImponiblesIVA":45.54<br />
+  	"SumaIEE":2.16<br />
+  	"SumaBasesImponiblesIEE":42.28<br />
+  	"CuotaFijaMensual":55.11<br /> 	-->
+  	
+
+
+
+      </div>
+	</div>
+      <!-- Main hero unit for a primary marketing message or call to action
+      -->
+      <!-- Example row of columns -->
+  <p>
+    <%= link_to '<< Anterior',  previous_wizard_path, class:"btn-primary btn" %>  <%= f.submit "Siguiente paso >>", class:"btn-primary btn"%>
+  </p>
+<% end %>      
+      <div class="row">
+        <div class="span4">
+          <h2>
+            Sin papel
+          </h2>
+          <p>
+            En Yelou no utilizamos papel, contratación, facturación y todos los procesos son electrónicos y por internet.
+          </p>
+        </div>
+        <div class="span4">
+          <h2>
+            Contratación
+          </h2>
+          <p>
+            El proceso de contratación lo puedes realizar todo seguido o en varias fases, ya que tus datos se guardarán, así como tus documentos para que puedas retomar el proceso en cualquier momento&nbsp;
+          </p>
+        </div>
+        <div class="span4">
+          <h2>
+            Contacto
+          </h2>
+          <p>
+            Para ofrecerte el mejor servicio de atención al cliente, podrás contactar con nosotros por teléfono y a través de tu cuenta de cliente .
+          </p>
+        </div>
+      </div>
+      <hr>
+      <footer>
+
+      </footer>
+
+
+
+

@@ -1,0 +1,68 @@
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :precontrato do
+    suministro_cups "MyString"
+    suministro_tarifa "MyString"
+    suministro_tipousuario "MyString"
+    cliente_nombre "MyString"
+    cliente_apellido1 "MyString"
+    cliente_apellido2 "MyString"
+    cliente_nifniecif "MyString"
+    cliente_domicilio "MyString"
+    cliente_provincia "MyString"
+    cliente_municipio "MyString"
+    cliente_codigopostal "MyString"
+    cliente_email "MyString"
+    cliente_telefono "MyString"
+    cliente_fax "MyString"
+    titular_elmismo false
+    titular_nombre "MyString"
+    titular_apellido1 "MyString"
+    titular_apellido2 "MyString"
+    titular_nifniecif "MyString"
+    titular_domicilio "MyString"
+    titular_provincia "MyString"
+    titular_municipio "MyString"
+    titular_codigopostal "MyString"
+    titular_email "MyString"
+    titular_telefono "MyString"
+    titular_fax "MyString"
+    datossuministro_elmismo false
+    datossuministro_direccion "MyString"
+    datossuministro_provincia "MyString"
+    datossuministro_municipio "MyString"
+    datossuministro_codigopostal "MyString"
+    datossuministro_email "MyString"
+    datossuministro_telefono "MyString"
+    datossuministro_fax "MyString"
+    datossuministro_potencia "MyString"
+    datossuministro_consumoestimado "MyString"
+    comunicaciones_elmismo false
+    comunicaciones_direccion "MyString"
+    comunicaciones_provincia "MyString"
+    comunicaciones_municipio "MyString"
+    comunicaciones_codigopostal "MyString"
+    comunicaciones_email "MyString"
+    comunicaciones_telefono "MyString"
+    comunicaciones_fax "MyString"
+    comunicaciones_idioma "MyString"
+    banco_nombre "MyString"
+    banco_apellido1 "MyString"
+    banco_apellido2 "MyString"
+    banco_cuenta "MyString"
+    aceptaciones_aceptoterminoscontratacion false
+    aceptaciones_aceptoterminosgenerales false
+    aceptaciones_aceptoefactura false
+    aceptaciones_aceptocontratoelectronico false
+    documentos_facturas "MyString"
+    documentos_cie "MyString"
+    documentos_habitabilidad "MyString"
+    documentos_dni "MyString"
+    documentos_poder "MyString"
+    otros_contadoralquiler false
+    otros_titular false
+    otros_apoderado false
+    otros_justotitulo false
+  end
+end

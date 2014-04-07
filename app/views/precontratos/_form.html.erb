@@ -1,0 +1,98 @@
+<%= simple_form_for(@precontrato) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :suministro_cups %>
+    <%= f.input :suministro_tarifa %>
+    <%= f.input :suministro_tipousuario %>
+    <%= f.input :cliente_nombre %>
+    <%= f.input :cliente_apellido1 %>
+    <%= f.input :cliente_apellido2 %>
+    <%= f.input :cliente_nifniecif %>
+    <%= f.input :cliente_domicilio %>
+    <%= f.input :cliente_provincia %>
+    <%= f.input :cliente_municipio %>
+    <%= f.input :cliente_codigopostal %>
+    <%= f.input :cliente_email %>
+    <%= f.input :cliente_telefono %>
+    <%= f.input :cliente_fax %>
+    <%= f.input :titular_elmismo %>
+    <%= f.input :titular_nombre %>
+    <%= f.input :titular_apellido1 %>
+    <%= f.input :titular_apellido2 %>
+    <%= f.input :titular_nifniecif %>
+    <%= f.input :titular_domicilio %>
+    <%= f.input :titular_provincia %>
+    <%= f.input :titular_municipio %>
+    <%= f.input :titular_codigopostal %>
+    <%= f.input :titular_email %>
+    <%= f.input :titular_telefono %>
+    <%= f.input :titular_fax %>
+    
+    <%= f.input :apoderado_nombre %>
+    <%= f.input :apoderado_apellido1 %>
+    <%= f.input :apoderado_apellido2 %>
+    <%= f.input :apoderado_nifniecif %>
+    <%= f.input :apoderado_domicilio %>
+    <%= f.input :apoderado_provincia %>
+    <%= f.input :apoderado_municipio %>
+    <%= f.input :apoderado_codigopostal %>
+    <%= f.input :apoderado_email %>
+    <%= f.input :apoderado_telefono %>
+    <%= f.input :apoderado_fax %>    
+
+    <%= f.input :justotitulo_nombre %>
+    <%= f.input :justotitulo_apellido1 %>
+    <%= f.input :justotitulo_apellido2 %>
+    <%= f.input :justotitulo_nifniecif %>
+    <%= f.input :justotitulo_domicilio %>
+    <%= f.input :justotitulo_provincia %>
+    <%= f.input :justotitulo_municipio %>
+    <%= f.input :justotitulo_codigopostal %>
+    <%= f.input :justotitulo_email %>
+    <%= f.input :justotitulo_telefono %>
+    <%= f.input :justotitulo_fax %>
+    
+    
+    <%= f.input :datossuministro_elmismo %>
+    <%= f.input :datossuministro_direccion %>
+    <%= f.input :datossuministro_provincia %>
+    <%= f.input :datossuministro_municipio %>
+    <%= f.input :datossuministro_codigopostal %>
+    <%= f.input :datossuministro_email %>
+    <%= f.input :datossuministro_telefono %>
+    <%= f.input :datossuministro_fax %>
+    <%= f.input :datossuministro_potencia %>
+    <%= f.input :datossuministro_consumoestimado %>
+    <%= f.input :comunicaciones_elmismo %>
+    <%= f.input :comunicaciones_direccion %>
+    <%= f.input :comunicaciones_provincia %>
+    <%= f.input :comunicaciones_municipio %>
+    <%= f.input :comunicaciones_codigopostal %>
+    <%= f.input :comunicaciones_email %>
+    <%= f.input :comunicaciones_telefono %>
+    <%= f.input :comunicaciones_fax %>
+    <%= f.input :comunicaciones_idioma %>
+    <%= f.input :banco_nombre %>
+    <%= f.input :banco_apellido1 %>
+    <%= f.input :banco_apellido2 %>
+    <%= f.input :banco_cuenta %>
+    <%= f.input :aceptaciones_aceptoterminoscontratacion %>
+    <%= f.input :aceptaciones_aceptoterminosgenerales %>
+    <%= f.input :aceptaciones_aceptoefactura %>
+    <%= f.input :aceptaciones_aceptocontratoelectronico %>
+    <%= f.input :documentos_facturas %>
+    <%= f.input :documentos_cie %>
+    <%= f.input :documentos_habitabilidad %>
+    <%= f.input :documentos_dni %>
+    <%= f.input :documentos_poder %>
+    <%= f.input :otros_contadoralquiler %>
+    <%= f.input :otros_titular %>
+    <%= f.input :otros_apoderado %>
+    <%= f.input :otros_justotitulo %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

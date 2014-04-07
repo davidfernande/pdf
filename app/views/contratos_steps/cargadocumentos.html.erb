@@ -1,0 +1,108 @@
+<%= filepicker_js_include_tag %>
+        <h3 class="titulo">
+          Carga de Documentos
+        </h3>
+      <div class="hero-unit">
+      	<%= simple_form_for @precontrato, :url => wizard_path, :method => :put, :html => { :class => 'form-horizontal' }  do |f| %>
+  		<%= f.error_notification %>
+
+        <p>
+          La ley nos exige tener cierta información de nuestros clientes de forma
+          rigurosa. Para hacer que el proceso de contratación sea más rápido y más
+          fácil, te pedimos que nos proporciones los siguientes documentos:
+        </p>
+        <div>
+          <br>
+          <div class="row-fluid">
+            <div class="span3 offset2">
+              <h3 class="text-center">
+                Factura de la Luz
+              </h3>
+
+              <div class="text-center">
+                <img src="https://s3.amazonaws.com/jetstrap-site/images/website/index/what_icon.png">
+                <br>
+              </div>
+              <div class="text-center">
+                <p style="line-height: 20px;"><small>Selecciona y carga tus últimas facturas de la luz, como mínimo la última.</small></p>
+
+              </div>
+            </div>
+            <div class="span3 offset1">
+              <h3 class="text-center">
+                Documento
+              </h3>
+
+              <div class="text-center">
+                <img src="https://s3.amazonaws.com/jetstrap-site/images/website/index/what_icon.png">
+                <br>
+              </div>
+              <div class="text-center">
+              	
+                <p style="line-height: 20px;"><small>Selecciona y carga la imagen de tu documento de Identidad.</small></p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="row-fluid">
+            <div class="span3 offset2">
+              <p class="text-center">
+              	                  <small><i>Como consigo esto?</i></small>
+                <%= f.filepicker_field :documentos_facturas, button_class:"btn btn-small btn-info", button_text:"Seleccionar archivos" %>
+              </p>
+            </div>
+            <div class="span3 offset1">
+              <p class="text-center">
+              	                  <small><i>Como consigo esto?</i></small>
+                <%= f.filepicker_field :documentos_dni, button_class:"btn btn-small btn-info", button_text:"Seleccionar archivo"  %>
+              </p>
+            </div>
+
+          </div>
+
+      </div>
+        <p>
+    <%= link_to '<< Anterior',  previous_wizard_path, class:"btn-primary btn" %> <%= f.submit "Siguiente paso >>", class:"btn-primary btn"%>
+	<%end%>
+        </p>
+      <div class="row">
+        <div class="span4">
+          <h2>
+            Sin papel
+          </h2>
+          <p>
+            En Yelou no utilizamos papel, contratación, facturación y todos los procesos
+            son electrónicos y por internet.
+          </p>
+          <p>
+          </p>
+        </div>
+        <div class="span4">
+          <h2>
+            Contratación
+          </h2>
+          <p>
+            El proceso de contratación lo puedes realizar todo seguido o en varias fases, ya que tus datos se guardarán, así como tus documentos para que
+            puedas retomar el proceso en cualquier momento&nbsp;
+          </p>
+          <p>
+          </p>
+        </div>
+        <div class="span4">
+          <h2>
+            Contacto
+          </h2>
+          <p>
+            Para ofrecerte el mejor servicio de atención al cliente, podrás contactar con nosotros por teléfono y a través de tu cuenta de cliente .
+          </p>
+          <p>
+          </p>
+        </div>
+      </div>
+      <hr>
+      <footer>
+
+      </footer>
+

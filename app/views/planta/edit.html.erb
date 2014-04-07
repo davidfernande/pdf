@@ -1,0 +1,17 @@
+<div class="page-header">
+  <%= link_to @plantum.huerto, :class => 'btn btn-primary' do %>
+    <i class="icon-list-alt icon-white"></i>
+    Huerto
+  <% end %>
+  <%= link_to @plantum, :class => 'btn btn-primary' do %>
+    <i class="icon-info-sign icon-white"></i>
+    Ver
+  <% end %>
+  <% if not @plantum.huerto.nil?%>
+  <h1>Planta en <%= @plantum.huerto.agrupacion %></h1>
+  <%else%>
+  <h1>Planta en sin huerto</h1>
+  <%end %>
+</div>
+
+<%= render 'form' %>

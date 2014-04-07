@@ -1,0 +1,42 @@
+<div class="page-header">
+
+  <h1>Plantas</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Agrupacion</th>
+            <th>Nombre</th>
+            <th>Razonsocial</th>
+            <th>Cif</th>
+            <th>Cups</th>
+            <th>Potencia</th>
+            <th>Produccion</th>
+            <th></th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @planta) do |plantum| %>
+      		<%if plantum.huerto.nil? %>
+            <td></td>  
+            <%else%>
+            <td><%= plantum.huerto.agrupacion %></td>  
+            <%end%>    
+            <td><%= plantum.nombre %></td>
+            <td><%= plantum.razonsocial %></td>
+            <td><%= plantum.cif %></td>
+            <td><%= plantum.cups %></td>
+            <td><%= plantum.potencia %></td>
+            <td><%= plantum.produccion %></td>
+
+            <td><%= link_to 'Ver', plantum , class:"btn-primary btn-mini"%>
+        <%= link_to 'Editar', edit_plantum_path(plantum) , class:"btn-warning btn-mini"%>
+        <%= link_to 'Borrar', plantum, method: :delete, data: { confirm: 'Are you sure?' },class:"btn-danger btn-mini"  %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,21 @@
+<p><h2 class="titulo">Apoderado</h2></p>
+
+<%= simple_form_for @precontrato, :url => wizard_path, :method => :put, :html => { :class => 'form-horizontal' }  do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :apoderado_nombre %>
+    <%= f.input :apoderado_apellido1 %>
+    <%= f.input :apoderado_apellido2 %>
+    <%= f.input :apoderado_nifniecif %>
+    <%= f.input :apoderado_domicilio %>
+    <%= f.input :apoderado_provincia %>
+    <%= f.input :apoderado_municipio %>
+    <%= f.input :apoderado_codigopostal %>
+    <%= f.input :apoderado_email %>
+    <%= f.input :apoderado_telefono %>
+    <%= f.input :apoderado_fax %>   
+  <div class="form-actions">
+  <%= link_to '<< Anterior',  previous_wizard_path, class:"btn-primary btn" %> <%= f.submit "Siguiente paso >>", class:"btn-primary btn" %>  
+  </div>
+<% end %>

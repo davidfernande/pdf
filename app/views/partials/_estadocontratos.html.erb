@@ -1,0 +1,114 @@
+          <div class="row">
+          	
+			<div class="span12 widget">
+				<h3><i class="fontello-icon-chart"></i>Estado de tus contratos</h3>
+            	<div class="tile" style="min-height:50px;">            
+                            <div class="widget-header">
+									  <%= link_to '/contratos_steps/bienvenido', :class => 'btn btn-primary' do %>
+									  <% session.delete(:precontrato_id) %>
+									    <i class="icon-plus icon-white"></i>
+									    Nuevo Contrato
+									  <% end %>
+                              
+                            </div>
+                            <div class="widget-content">
+                                <div class="widget-body">
+								<h4>Activos</h4>
+								<% if @contratos_nexus.count == 0 %>
+										<i>No tienes ningún contrato activo</i>
+								<% else %>
+									<table class="table table-condensed">
+									  <thead>
+									    <tr>
+									      <th class="span4">Domicilio</th>	
+									      <th class="span1">Cups</th>
+									      <th class="span1">Potencia</th>
+									      <th class="span4">Titular</th>
+										  <th class="span2"></th>
+
+									    </tr>
+									  </thead>
+									  <tbody>
+										<% i=0 %>
+										<% @contratos_nexus.each do |contrato| %>
+										    <tr>
+										      <td class="span4"><%= contrato["cliente_domicilio"] %>, <%= contrato["cliente_municipio"] %> </td>
+										      <td class="span1"><%= link_to contrato["suministro_cups"], contrato_path(i) %></td>
+										      <td class="span1"><%= contrato["suministro_tarifa"] %></td>
+										      <td class="span4"><%= (contrato["cliente_nombre"] || "") + ' ' + (contrato["cliente_apellido1"] || "") + ' ' + (contrato["cliente_apellido2"] || "") %></td>
+											  <td class="span2">
+										      <span class="badge badge-info">Activo</span>
+										      <i class="icon-map-marker"></i>
+										      <i class="icon-certificate"></i>											  	
+											  </td>
+	
+											  <% i +=1 %>
+										    </tr>
+										    </tr>
+										<% end %>
+										
+									  </tbody>
+									</table>
+								<% end %>
+
+
+                                     
+                                </div>
+                            </div>
+            	</div>
+                        
+			</div>
+			
+			<div class="span12 widget">
+            	<div class="tile" style="min-height:50px;">            
+
+                            <div class="widget-content">
+                                <div class="widget-body">
+
+									<h4>Precontratos</h4>
+									             
+									<% if @precontratos.count == 0 %>
+										<i>No tienes ningún precontrato pendiente de finalizar</i>
+									<% else %>            	
+									<table class="table table-condensed">
+									  <thead>
+									    <tr>
+									      <th class="span4">Domicilio</th>	
+									      <th class="span1">Cups</th>
+									      <th class="span1">Potencia</th>
+									      <th class="span4">Titular</th>
+										  <th class="span1"></th>
+									      <th class="span1"></th>
+									    </tr>
+									  </thead>
+									
+									  <tbody>									
+									<% @precontratos.each do |precontrato| %>
+									    <tr>
+									      <td class="span4"><%= precontrato.cliente_domicilio %>, <%= precontrato.cliente_municipio %> </td>
+									      <td class="span1"><%= precontrato.suministro_cups %></td>
+									      <td class="span1"><%= precontrato.suministro_tarifa %></td>
+									      <td class="span4"><%= (precontrato.cliente_nombre || "") + ' ' + (precontrato.cliente_apellido1 || "")+ ' ' + (precontrato.cliente_apellido2 || "") %></td>
+									 
+										  <% if precontrato.finalizado != true %>
+									      		<td class="span1"><%= link_to 'Recuperar', edit_precontrato_path(precontrato) %></td>
+									      		<td class="span1"><%= link_to 'Borrar', precontrato, confirm: 'Estás seguro?', method: :delete %></td>
+									      <% else %>
+									            <td class="span1">Finalizado</td>
+									      		<td class="span1">Enviado</td>
+									      <% end %>									
+									    </tr>
+									<% end %>									
+									
+									
+									  </tbody>
+									</table>
+									<% end %>
+                                     
+                                </div>
+                            </div>
+            	</div>
+                        
+			</div>			
+			
+          </div>

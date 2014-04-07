@@ -1,0 +1,25 @@
+<p><h2 class="titulo">Titular del Suministro</h2></p>
+
+<%= simple_form_for @precontrato, :url => wizard_path, :method => :put , :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    
+    <%= f.input :titular_nombre %>
+    <%= f.input :titular_apellido1 %>
+    <%= f.input :titular_apellido2 %>
+    <%= f.input :titular_nifniecif %>
+    <%= f.input :titular_domicilio %>
+    <%= f.input :titular_provincia %>
+    <%= f.input :titular_municipio %>
+    <%= f.input :titular_codigopostal %>
+    <%= f.input :titular_email %>
+    <%= f.input :titular_telefono %>
+    <%= f.input :titular_fax %>
+    
+  <div>
+  <div class="form-actions">
+    <%= link_to 'Anterior',  previous_wizard_path, class:"btn-primary btn" %> <%= f.submit "Siguiente paso >>", class:"btn-primary btn"%>
+  </div>
+<% end %>
+ 

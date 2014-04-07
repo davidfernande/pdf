@@ -1,0 +1,21 @@
+<p><h2 class="titulo">Datos del Suministro</h2></p>
+
+<%= simple_form_for @precontrato, :url => wizard_path, :method => :put , :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    
+    <%= f.input :datossuministro_direccion %>
+    <%= f.input :datossuministro_provincia %>
+    <%= f.input :datossuministro_municipio %>
+    <%= f.input :datossuministro_codigopostal %>
+    <%= f.input :datossuministro_email %>
+    <%= f.input :datossuministro_telefono %>
+    <%= f.input :datossuministro_fax %>
+    <%= f.input :datossuministro_potencia %>
+    <%= f.input :datossuministro_consumoestimado %>
+  <div>
+  <div class="form-actions">
+    <%= link_to '<< Anterior',  previous_wizard_path, class:"btn-primary btn" %>  <%= f.submit "Siguiente paso >>", class:"btn-primary btn"%>
+  </div>
+<% end %>

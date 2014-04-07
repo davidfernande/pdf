@@ -1,0 +1,70 @@
+
+
+
+
+
+      <div class="hero-unit">
+        <h1>
+          Bienvenido al mundo Yelou!
+        </h1>
+        <p>
+          En menos de 5 minutos podrás formar parte de Yelou!<br>
+          Yelou acerca la enegía del Sol a tu hogar, para que la luz que consumas sea de fuentes renovables y del productor que tú escojas.<br>
+          
+			<% if not @datoshuerto.nil?%>
+				<% if not @datoshuerto.agrupacion.empty? %>
+					Has elegido el huerto <b><%=@datoshuerto.agrupacion %> de <%=@datoshuerto.municipio %></b>, <small><i>pulsa <%= link_to 'aquí', 'http://www.yelouluz.com/?q=article/huertos-solares' %> si quieres cambiar</i></small>
+					<p><%= link_to 'Comenzar >>', next_wizard_path, class:"btn-primary btn" %></p>
+				<% else %>
+					<p class="text-warning"><%= link_to 'Debes elegir un huerto solar antes de comenzar ', 'http://www.yelouluz.com/?q=article/huertos-solares' %></p>
+				<% end %>	
+			<% else %>
+				<p class="text-warning"><%= link_to 'Debes elegir un huerto solar antes de comenzar ', 'http://www.yelouluz.com/?q=article/huertos-solares' %></p>
+			<% end %>
+          
+        </p>
+      </div>
+      <!-- Main hero unit for a primary marketing message or call to action
+      -->
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>
+            Sin papel
+          </h2>
+          <p>
+            En Yelou no utilizamos papel, contratación, facturación y todos los procesos
+            son electrónicos y por internet.
+          </p>
+          <p>
+          </p>
+        </div>
+        <div class="span4">
+          <h2>
+            Contratación
+          </h2>
+          <p>
+            El proceso de contratación lo puedes realizar todo seguido o en varias
+            fases, ya que tus datos se guardarán, así como tus documentos para que
+            puedas retomar el proceso en cualquier momento&nbsp;
+          </p>
+          <p>
+          </p>
+        </div>
+        <div class="span4">
+          <h2>
+            Contacto
+          </h2>
+          <p>
+            Para ofrecerte el mejor servicio de atención al cliente, podrás contactar
+            con nosotros por teléfono y a través de tu cuenta de cliente .
+          </p>
+          <p>
+          </p>
+        </div>
+      </div>
+      <hr>
+      <footer>
+
+      </footer>
+      

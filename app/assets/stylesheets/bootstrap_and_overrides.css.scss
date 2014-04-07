@@ -1,0 +1,116 @@
+$btnPrimaryBackground: #049cdb;
+$navbarHeight: 44px;
+$navbarBackground: #FCEA0F;
+$navbarText: #000000;
+
+$sansFontFamily: 'Open Sans',​Helvetica,​Arial,​sans-serif;
+$headingsColor:  #444444;
+$textColor:  #444444;
+
+
+
+@import "bootstrap";
+body { padding-top: 60px; background: url("http://www.yelouluz.com/sites/all/themes/tb_sirate/images/mapatodaespana.jpg") no-repeat scroll center top transparent; }
+
+@import "bootstrap-responsive";
+
+.content {
+  background-color: #eee;
+  /* background: url("http://www.yelouluz.com/sites/default/files/image4.jpeg") no-repeat scroll center top transparent; */
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 6px 6px 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  /*height: 450px;*/
+}
+
+#portada {
+background: url("http://www.yelouluz.com/sites/default/files/image4.jpeg") no-repeat scroll center top transparent;
+}
+
+
+.navbar .nav {
+    margin: 11px 10px 0 0;
+}
+
+.navbar-inner {
+    background: -moz-linear-gradient(center top , #ffe900, #ffe900) repeat scroll 0 0 transparent;;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffe900), to(#ffe900));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe900', endColorstr='#ffe900');
+    border-bottom: 1px solid #9F1F68;
+    color: #444444;
+    min-height: 44px;
+    padding: 1px 1px 1px;
+  }
+  
+.navbar .nav > li > a {
+    text-shadow: 0 0px 0 white;
+    padding: 8px 15px;
+}
+
+.navbar .brand {
+  padding: 2px 0;
+}
+
+.dropdown-menu > li > a {
+    padding: 5px 10px;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    margin-top: 2px;
+}
+
+.texto-lista{
+  padding: 0px 5px;
+}
+
+.table-striped-huertos {
+    line-height: 15px;
+    font-size:12px;
+}
+
+.table-striped-huertos th, .table-striped-huertos td {
+    line-height: 15px;
+}
+
+.titulo {
+color: #008BCB;
+font-size: 2.2em;
+font-weight: 400;
+text-decoration: none;
+border-bottom: 1px solid #E3E1E1;
+
+}
+
+.page-header {
+
+    margin: 20px 0 5px;
+    padding-bottom: 1px;
+}
+
+.hero-unit {
+    background-color: #DBDBDB;
+    /* color: #008BCB; */
+}
+
+h4{
+    font-size: 19px;
+    line-height: 1.5;
+    color: #444444;
+    font-weight: 400;
+}
+
+.dl-horizontal dt {
+font-weight: 400;
+}
+
+/*Change the size here*/
+div[class="tooltip-inner"] {
+    max-width: 350px;
+}
+
+

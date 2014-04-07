@@ -1,0 +1,10 @@
+json.version "1.0"
+json.huertos do
+  json.array!(@huertos) do |json,huerto|
+    json.device_label  huerto.name
+    json.latitude huerto.y.to_f
+    json.longitude huerto.x.to_f
+    json.icon "http://75.101.167.227/sites/all/themes/tb_sirate/js/img/LABELMAPA032.png"
+    json.html "<h2>Solar III</h2><p>" + huerto.name + "</p><br><a href='http://www.yelouluz.es/?q=article/la-soleada-albacete'>+ Información</a>" 
+  end
+end

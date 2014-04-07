@@ -1,0 +1,200 @@
+<div class="page-header">
+  <%= link_to root_path, :class => 'btn' do %>
+    <i class="icon-list-alt"></i>
+    Volver
+  <% end %> 
+<!--   <%= link_to edit_precontrato_path(@precontrato), :class => 'btn btn-primary' do %>
+    <i class="icon-pencil icon-white"></i>
+    Edit
+  <% end %> -->
+  <h1>Precontrato</h1>
+</div>
+
+<dl>
+  <dt>Suministro cups:</dt>
+  <dd><%= @precontrato.suministro_cups %></dd>
+
+  <dt>Suministro tarifa:</dt>
+  <dd><%= @precontrato.suministro_tarifa %></dd>
+
+  <dt>Suministro tipousuario:</dt>
+  <dd><%= @precontrato.suministro_tipousuario %></dd>
+
+  <dt>Cliente nombre:</dt>
+  <dd><%= @precontrato.cliente_nombre %></dd>
+
+  <dt>Cliente apellido1:</dt>
+  <dd><%= @precontrato.cliente_apellido1 %></dd>
+
+  <dt>Cliente apellido2:</dt>
+  <dd><%= @precontrato.cliente_apellido2 %></dd>
+
+  <dt>Cliente nifniecif:</dt>
+  <dd><%= @precontrato.cliente_nifniecif %></dd>
+
+  <dt>Cliente domicilio:</dt>
+  <dd><%= @precontrato.cliente_domicilio %></dd>
+
+  <dt>Cliente provincia:</dt>
+  <dd><%= @precontrato.cliente_provincia %></dd>
+
+  <dt>Cliente municipio:</dt>
+  <dd><%= @precontrato.cliente_municipio %></dd>
+
+  <dt>Cliente codigopostal:</dt>
+  <dd><%= @precontrato.cliente_codigopostal %></dd>
+
+  <dt>Cliente email:</dt>
+  <dd><%= @precontrato.cliente_email %></dd>
+
+  <dt>Cliente telefono:</dt>
+  <dd><%= @precontrato.cliente_telefono %></dd>
+
+  <dt>Cliente fax:</dt>
+  <dd><%= @precontrato.cliente_fax %></dd>
+
+  <dt>Titular elmismo:</dt>
+  <dd><%= @precontrato.titular_elmismo %></dd>
+
+  <dt>Titular nombre:</dt>
+  <dd><%= @precontrato.titular_nombre %></dd>
+
+  <dt>Titular apellido1:</dt>
+  <dd><%= @precontrato.titular_apellido1 %></dd>
+
+  <dt>Titular apellido2:</dt>
+  <dd><%= @precontrato.titular_apellido2 %></dd>
+
+  <dt>Titular nifniecif:</dt>
+  <dd><%= @precontrato.titular_nifniecif %></dd>
+
+  <dt>Titular domicilio:</dt>
+  <dd><%= @precontrato.titular_domicilio %></dd>
+
+  <dt>Titular provincia:</dt>
+  <dd><%= @precontrato.titular_provincia %></dd>
+
+  <dt>Titular municipio:</dt>
+  <dd><%= @precontrato.titular_municipio %></dd>
+
+  <dt>Titular codigopostal:</dt>
+  <dd><%= @precontrato.titular_codigopostal %></dd>
+
+  <dt>Titular email:</dt>
+  <dd><%= @precontrato.titular_email %></dd>
+
+  <dt>Titular telefono:</dt>
+  <dd><%= @precontrato.titular_telefono %></dd>
+
+  <dt>Titular fax:</dt>
+  <dd><%= @precontrato.titular_fax %></dd>
+
+  <dt>Datossuministro elmismo:</dt>
+  <dd><%= @precontrato.datossuministro_elmismo %></dd>
+
+  <dt>Datossuministro direccion:</dt>
+  <dd><%= @precontrato.datossuministro_direccion %></dd>
+
+  <dt>Datossuministro provincia:</dt>
+  <dd><%= @precontrato.datossuministro_provincia %></dd>
+
+  <dt>Datossuministro municipio:</dt>
+  <dd><%= @precontrato.datossuministro_municipio %></dd>
+
+  <dt>Datossuministro codigopostal:</dt>
+  <dd><%= @precontrato.datossuministro_codigopostal %></dd>
+
+  <dt>Datossuministro email:</dt>
+  <dd><%= @precontrato.datossuministro_email %></dd>
+
+  <dt>Datossuministro telefono:</dt>
+  <dd><%= @precontrato.datossuministro_telefono %></dd>
+
+  <dt>Datossuministro fax:</dt>
+  <dd><%= @precontrato.datossuministro_fax %></dd>
+
+  <dt>Datossuministro potencia:</dt>
+  <dd><%= @precontrato.datossuministro_potencia %></dd>
+
+  <dt>Datossuministro consumoestimado:</dt>
+  <dd><%= @precontrato.datossuministro_consumoestimado %></dd>
+
+  <dt>Comunicaciones elmismo:</dt>
+  <dd><%= @precontrato.comunicaciones_elmismo %></dd>
+
+  <dt>Comunicaciones direccion:</dt>
+  <dd><%= @precontrato.comunicaciones_direccion %></dd>
+
+  <dt>Comunicaciones provincia:</dt>
+  <dd><%= @precontrato.comunicaciones_provincia %></dd>
+
+  <dt>Comunicaciones municipio:</dt>
+  <dd><%= @precontrato.comunicaciones_municipio %></dd>
+
+  <dt>Comunicaciones codigopostal:</dt>
+  <dd><%= @precontrato.comunicaciones_codigopostal %></dd>
+
+  <dt>Comunicaciones email:</dt>
+  <dd><%= @precontrato.comunicaciones_email %></dd>
+
+  <dt>Comunicaciones telefono:</dt>
+  <dd><%= @precontrato.comunicaciones_telefono %></dd>
+
+  <dt>Comunicaciones fax:</dt>
+  <dd><%= @precontrato.comunicaciones_fax %></dd>
+
+  <dt>Comunicaciones idioma:</dt>
+  <dd><%= @precontrato.comunicaciones_idioma %></dd>
+
+  <dt>Banco nombre:</dt>
+  <dd><%= @precontrato.banco_nombre %></dd>
+
+  <dt>Banco apellido1:</dt>
+  <dd><%= @precontrato.banco_apellido1 %></dd>
+
+  <dt>Banco apellido2:</dt>
+  <dd><%= @precontrato.banco_apellido2 %></dd>
+
+  <dt>Banco cuenta:</dt>
+  <dd><%= @precontrato.banco_cuenta %></dd>
+
+  <dt>Aceptaciones aceptoterminoscontratacion:</dt>
+  <dd><%= @precontrato.aceptaciones_aceptoterminoscontratacion %></dd>
+
+  <dt>Aceptaciones aceptoterminosgenerales:</dt>
+  <dd><%= @precontrato.aceptaciones_aceptoterminosgenerales %></dd>
+
+  <dt>Aceptaciones aceptoefactura:</dt>
+  <dd><%= @precontrato.aceptaciones_aceptoefactura %></dd>
+
+  <dt>Aceptaciones aceptocontratoelectronico:</dt>
+  <dd><%= @precontrato.aceptaciones_aceptocontratoelectronico %></dd>
+
+  <dt>Documentos facturas:</dt>
+  <dd><%= @precontrato.documentos_facturas %></dd>
+
+  <dt>Documentos cie:</dt>
+  <dd><%= @precontrato.documentos_cie %></dd>
+
+  <dt>Documentos habitabilidad:</dt>
+  <dd><%= @precontrato.documentos_habitabilidad %></dd>
+
+  <dt>Documentos dni:</dt>
+  <dd><%= @precontrato.documentos_dni %></dd>
+
+  <dt>Documentos poder:</dt>
+  <dd><%= @precontrato.documentos_poder %></dd>
+
+  <dt>Otros contadoralquiler:</dt>
+  <dd><%= @precontrato.otros_contadoralquiler %></dd>
+
+  <dt>Otros titular:</dt>
+  <dd><%= @precontrato.otros_titular %></dd>
+
+  <dt>Otros apoderado:</dt>
+  <dd><%= @precontrato.otros_apoderado %></dd>
+
+  <dt>Otros justotitulo:</dt>
+  <dd><%= @precontrato.otros_justotitulo %></dd>
+
+</dl>

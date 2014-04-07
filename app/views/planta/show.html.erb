@@ -1,0 +1,38 @@
+<div class="page-header">
+  <%= link_to @plantum.huerto, :class => 'btn btn-primary' do %>
+    <i class="icon-list-alt icon-white"></i>
+    Huerto
+  <% end %>
+  <%= link_to edit_plantum_path(@plantum), :class => 'btn btn-primary' do %>
+    <i class="icon-pencil icon-white"></i>
+    Editar
+  <% end %>
+  <% if not @plantum.huerto.nil?%>
+  <h1>Planta en <%= @plantum.huerto.agrupacion %></h1>
+  <%else%>
+  <h1>Planta en sin huerto</h1>
+  <%end %>
+</div>
+
+<dl class="dl-horizontal">
+	
+  <dt>Nombre:</dt>
+  <dd><%= @plantum.nombre %></dd>
+
+  <dt>Razonsocial:</dt>
+  <dd><%= @plantum.razonsocial %></dd>
+
+  <dt>Cif:</dt>
+  <dd><%= @plantum.cif %></dd>
+
+  <dt>Cups:</dt>
+  <dd><%= @plantum.cups %></dd>
+
+  <dt>Potencia:</dt>
+  <dd><%= display_es(@plantum.potencia) %></dd>
+
+  <dt>Produccion:</dt>
+  <dd><%= display_es(@plantum.produccion) %></dd>
+
+
+</dl>

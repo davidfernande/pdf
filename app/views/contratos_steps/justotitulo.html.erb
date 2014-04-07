@@ -1,0 +1,23 @@
+
+<p><h2 class="titulo">Justo Título</h2></p>
+
+<%= simple_form_for @precontrato, :url => wizard_path, :method => :put, :html => { :class => 'form-horizontal' }  do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :justotitulo_nombre %>
+    <%= f.input :justotitulo_apellido1 %>
+    <%= f.input :justotitulo_apellido2 %>
+    <%= f.input :justotitulo_nifniecif %>
+    <%= f.input :justotitulo_domicilio %>
+    <%= f.input :justotitulo_provincia %>
+    <%= f.input :justotitulo_municipio %>
+    <%= f.input :justotitulo_codigopostal %>
+    <%= f.input :justotitulo_email %>
+    <%= f.input :justotitulo_telefono %>
+    <%= f.input :justotitulo_fax %>   
+  <div class="form-actions">
+    <%= link_to 'Anterior',  previous_wizard_path, class:"btn-primary btn" %> <%= f.button.submit "Siguiente paso >>", class:"btn-primary btn"  %>
+  </div>
+<% end %>
+ 

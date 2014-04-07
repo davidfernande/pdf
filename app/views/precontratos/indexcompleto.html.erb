@@ -1,0 +1,202 @@
+<div class="page-header">
+  <%= link_to new_precontrato_path, :class => 'btn btn-primary' do %>
+    <i class="icon-plus icon-white"></i>
+    New Precontrato
+  <% end %>
+  <h1>precontratos</h1>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Suministro cups</th>
+      <th>Suministro tarifa</th>
+      <th>Suministro tipousuario</th>
+      <th>Cliente nombre</th>
+      <th>Cliente apellido1</th>
+      <th>Cliente apellido2</th>
+      <th>Cliente nifniecif</th>
+      <th>Cliente domicilio</th>
+      <th>Cliente provincia</th>
+      <th>Cliente municipio</th>
+      <th>Cliente codigopostal</th>
+      <th>Cliente email</th>
+      <th>Cliente telefono</th>
+      <th>Cliente fax</th>
+      <th>Titular elmismo</th>
+      <th>Titular nombre</th>
+      <th>Titular apellido1</th>
+      <th>Titular apellido2</th>
+      <th>Titular nifniecif</th>
+      <th>Titular domicilio</th>
+      <th>Titular provincia</th>
+      <th>Titular municipio</th>
+      <th>Titular codigopostal</th>
+      <th>Titular email</th>
+      <th>Titular telefono</th>
+      <th>Titular fax</th>
+
+      <th>Apoderado nombre</th>
+      <th>Apoderado apellido1</th>
+      <th>Apoderado apellido2</th>
+      <th>Apoderado nifniecif</th>
+      <th>Apoderado domicilio</th>
+      <th>Apoderado provincia</th>
+      <th>Apoderado municipio</th>
+      <th>Apoderado codigopostal</th>
+      <th>Apoderado email</th>
+      <th>Apoderado telefono</th>
+      <th>Apoderado fax</th>
+      
+      <th>JustoTitulo nombre</th>
+      <th>JustoTitulo apellido1</th>
+      <th>JustoTitulo apellido2</th>
+      <th>JustoTitulo nifniecif</th>
+      <th>JustoTitulo domicilio</th>
+      <th>JustoTitulo provincia</th>
+      <th>JustoTitulo municipio</th>
+      <th>JustoTitulo codigopostal</th>
+      <th>JustoTitulo email</th>
+      <th>JustoTitulo telefono</th>
+      <th>JustoTitulo fax</th>      
+      
+      <th>Datossuministro elmismo</th>
+      <th>Datossuministro direccion</th>
+      <th>Datossuministro provincia</th>
+      <th>Datossuministro municipio</th>
+      <th>Datossuministro codigopostal</th>
+      <th>Datossuministro email</th>
+      <th>Datossuministro telefono</th>
+      <th>Datossuministro fax</th>
+      <th>Datossuministro potencia</th>
+      <th>Datossuministro consumoestimado</th>
+      <th>Comunicaciones elmismo</th>
+      <th>Comunicaciones direccion</th>
+      <th>Comunicaciones provincia</th>
+      <th>Comunicaciones municipio</th>
+      <th>Comunicaciones codigopostal</th>
+      <th>Comunicaciones email</th>
+      <th>Comunicaciones telefono</th>
+      <th>Comunicaciones fax</th>
+      <th>Comunicaciones idioma</th>
+      <th>Banco nombre</th>
+      <th>Banco apellido1</th>
+      <th>Banco apellido2</th>
+      <th>Banco cuenta</th>
+      <th>Aceptaciones aceptoterminoscontratacion</th>
+      <th>Aceptaciones aceptoterminosgenerales</th>
+      <th>Aceptaciones aceptoefactura</th>
+      <th>Aceptaciones aceptocontratoelectronico</th>
+      <th>Documentos facturas</th>
+      <th>Documentos cie</th>
+      <th>Documentos habitabilidad</th>
+      <th>Documentos dni</th>
+      <th>Documentos poder</th>
+      <th>Otros contadoralquiler</th>
+      <th>Otros titular</th>
+      <th>Otros apoderado</th>
+      <th>Otros justotitulo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @precontratos.each do |precontrato| %>
+    <tr>
+      <td><%= precontrato.suministro_cups %></td>
+      <td><%= precontrato.suministro_tarifa %></td>
+      <td><%= precontrato.suministro_tipousuario %></td>
+      <td><%= precontrato.cliente_nombre %></td>
+      <td><%= precontrato.cliente_apellido1 %></td>
+      <td><%= precontrato.cliente_apellido2 %></td>
+      <td><%= precontrato.cliente_nifniecif %></td>
+      <td><%= precontrato.cliente_domicilio %></td>
+      <td><%= precontrato.cliente_provincia %></td>
+      <td><%= precontrato.cliente_municipio %></td>
+      <td><%= precontrato.cliente_codigopostal %></td>
+      <td><%= precontrato.cliente_email %></td>
+      <td><%= precontrato.cliente_telefono %></td>
+      <td><%= precontrato.cliente_fax %></td>
+      <td><%= precontrato.titular_elmismo %></td>
+      <td><%= precontrato.titular_nombre %></td>
+      <td><%= precontrato.titular_apellido1 %></td>
+      <td><%= precontrato.titular_apellido2 %></td>
+      <td><%= precontrato.titular_nifniecif %></td>
+      <td><%= precontrato.titular_domicilio %></td>
+      <td><%= precontrato.titular_provincia %></td>
+      <td><%= precontrato.titular_municipio %></td>
+      <td><%= precontrato.titular_codigopostal %></td>
+      <td><%= precontrato.titular_email %></td>
+      <td><%= precontrato.titular_telefono %></td>
+      <td><%= precontrato.titular_fax %></td>
+ 
+      <td><%= precontrato.apoderado_nombre %></td>
+      <td><%= precontrato.apoderado_apellido1 %></td>
+      <td><%= precontrato.apoderado_apellido2 %></td>
+      <td><%= precontrato.apoderado_nifniecif %></td>
+      <td><%= precontrato.apoderado_domicilio %></td>
+      <td><%= precontrato.apoderado_provincia %></td>
+      <td><%= precontrato.apoderado_municipio %></td>
+      <td><%= precontrato.apoderado_codigopostal %></td>
+      <td><%= precontrato.apoderado_email %></td>
+      <td><%= precontrato.apoderado_telefono %></td>
+      <td><%= precontrato.apoderado_fax %></td>     
+      
+      <td><%= precontrato.justotitulo_nombre %></td>
+      <td><%= precontrato.justotitulo_apellido1 %></td>
+      <td><%= precontrato.justotitulo_apellido2 %></td>
+      <td><%= precontrato.justotitulo_nifniecif %></td>
+      <td><%= precontrato.justotitulo_domicilio %></td>
+      <td><%= precontrato.justotitulo_provincia %></td>
+      <td><%= precontrato.justotitulo_municipio %></td>
+      <td><%= precontrato.justotitulo_codigopostal %></td>
+      <td><%= precontrato.justotitulo_email %></td>
+      <td><%= precontrato.justotitulo_telefono %></td>
+      <td><%= precontrato.justotitulo_fax %></td>     
+            
+      
+      <td><%= precontrato.datossuministro_elmismo %></td>
+      <td><%= precontrato.datossuministro_direccion %></td>
+      <td><%= precontrato.datossuministro_provincia %></td>
+      <td><%= precontrato.datossuministro_municipio %></td>
+      <td><%= precontrato.datossuministro_codigopostal %></td>
+      <td><%= precontrato.datossuministro_email %></td>
+      <td><%= precontrato.datossuministro_telefono %></td>
+      <td><%= precontrato.datossuministro_fax %></td>
+      <td><%= precontrato.datossuministro_potencia %></td>
+      <td><%= precontrato.datossuministro_consumoestimado %></td>
+      <td><%= precontrato.comunicaciones_elmismo %></td>
+      <td><%= precontrato.comunicaciones_direccion %></td>
+      <td><%= precontrato.comunicaciones_provincia %></td>
+      <td><%= precontrato.comunicaciones_municipio %></td>
+      <td><%= precontrato.comunicaciones_codigopostal %></td>
+      <td><%= precontrato.comunicaciones_email %></td>
+      <td><%= precontrato.comunicaciones_telefono %></td>
+      <td><%= precontrato.comunicaciones_fax %></td>
+      <td><%= precontrato.comunicaciones_idioma %></td>
+      <td><%= precontrato.banco_nombre %></td>
+      <td><%= precontrato.banco_apellido1 %></td>
+      <td><%= precontrato.banco_apellido2 %></td>
+      <td><%= precontrato.banco_cuenta %></td>
+      <td><%= precontrato.aceptaciones_aceptoterminoscontratacion %></td>
+      <td><%= precontrato.aceptaciones_aceptoterminosgenerales %></td>
+      <td><%= precontrato.aceptaciones_aceptoefactura %></td>
+      <td><%= precontrato.aceptaciones_aceptocontratoelectronico %></td>
+      <td><%= precontrato.documentos_facturas %></td>
+      <td><%= precontrato.documentos_cie %></td>
+      <td><%= precontrato.documentos_habitabilidad %></td>
+      <td><%= precontrato.documentos_dni %></td>
+      <td><%= precontrato.documentos_poder %></td>
+      <td><%= precontrato.otros_contadoralquiler %></td>
+      <td><%= precontrato.otros_titular %></td>
+      <td><%= precontrato.otros_apoderado %></td>
+      <td><%= precontrato.otros_justotitulo %></td>
+      <td><%= link_to 'Mostrar', precontrato %></td>
+      <td><%= link_to 'Editar', edit_precontrato_path(precontrato) %></td>
+      <td><%= link_to 'Borrar', precontrato, confirm: 'Estás seguro?', method: :delete %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

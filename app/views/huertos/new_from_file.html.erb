@@ -1,0 +1,42 @@
+<div class="page-header">
+  <%= link_to huertos_path, :class => 'btn' do %>
+    <i class="icon-list-alt"></i>
+    Back
+  <% end %>
+  <h1>Creación de Huertos desde archivo</h1>
+</div>
+
+
+
+
+
+	<% @titulo= "Creación de Huertos" %>
+            	<% if not notice.nil?  %>
+					<% if not notice.nil?  %>
+						<% if alert == true %>
+							<span class="notification undone" > <%= notice %> </span>
+						<% else %>
+							<span class="notification done" > <%= notice %> </span>
+						<% end %>
+					<% end %>
+				<% end %>	
+	<div id='fadearea'> 		<!-- para el efecto fusion -->	
+
+
+	                	<div>
+	                	<p class='rlotexttitulo'>Crear Huertos desde Archivo</p>
+	                	</div>
+                
+	                	
+	                	<div>
+	                    <p class="margin_bottom_15">Debe seleccionar un archivo CSV con una lista de Huertos como el siguiente <a href="https://s3-eu-west-1.amazonaws.com/yelouproduction/plantillasaplicacion/huertos.csv">ejemplo</a></p>
+	                    </div>
+	                    <div id='alertas'> </div>
+	</div>
+	                    <%= render 'form_from_file' %>
+						
+
+
+
+
+

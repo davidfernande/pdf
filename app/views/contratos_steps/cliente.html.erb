@@ -1,0 +1,132 @@
+	<style>
+	.ui-autocomplete-loading { background: white url('/assets/ui-anim_basic_16x16.gif') right center no-repeat; }
+	#confirm-overlay {background-color:#eee; cursor:wait;}
+	</style>
+
+        <h3 class="titulo">
+          Datos del Cliente
+        </h3>
+     <div class="hero-unit">
+
+
+
+<%= simple_form_for @precontrato, :url => wizard_path,  :method => :put , :html => { :class => 'form-vertical', :id => "form_id" } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="row">
+		<div class="span3">
+			<h4>Cliente:</h4>
+		</div>  
+	</div>  	
+  	<div class="row">
+	  	<div class="span2">
+	    	<%= f.input :cliente_nombre, placeholder: 'Nombre', :label=>"Nombre", :input_html => { :class => 'span2 validate[required]'} %>
+	    </div>
+	    <div class="span2">
+	    	<%= f.input :cliente_apellido1, placeholder: 'Primer Apellido', :label=>"Primer Apellido", :input_html => { :class => 'span2 validate[required]'}  %>
+	    </div>
+	    <div class="span2">
+	    	<%= f.input :cliente_apellido2, placeholder: 'Segundo Apellido', :label=>"Segundo Apellido", :input_html => { :class => 'span2 validate[required]'}  %>
+	    </div>
+	   	<div class="span2">
+	    	<%= f.input :cliente_nifniecif, placeholder: 'NIF, CIF, NIE', :label=>"NIF, CIF, NIE" , :input_html => { :class => 'span2 validate[required,funcCall[checkIDS]]'}  %>
+	    	
+	    </div>
+    </div>
+    <div class="row">
+		<div class="span3">
+			<h4>Datos de contacto:</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span3">
+   			 <%= f.input :cliente_domicilio, :label=>"Domicilio", placeholder: 'calle, número, apartamento, letra...'  , :input_html => { :class => 'span3 validate[required]'} %>
+    	</div>
+		<div class="span2">				
+    		<%= f.input :cliente_provincia, :label=>"Provincia", :input_html => { :class => 'span2 validate[required]'}  %>
+    	</div>
+		<div class="span2">
+			<%= f.input :cliente_municipio, :label=>"Localidad", :input_html => { :class => 'span2 validate[required]'}  %>
+    	</div>
+		<div class="span1">		
+			<%= f.input :cliente_codigopostal, :label=>"C. Postal", :input_html => { :class => 'span1 validate[required,custom[onlyNumberSp]]'}  %>
+    	</div>
+
+    </div>
+
+	<div class="row">
+		<div class="span2">
+   			 <%= f.input :cliente_telefono, :label=>"Teléfono fijo", placeholder: '9XXXXXXXX'  , :input_html => { :class => 'span2 validate[custom[onlyNumberSp]]'} %>
+    	</div>
+		<div class="span2">
+			<%= f.input :cliente_telefono_movil, :label=>"Teléfono móvil", placeholder: 'XXXXXXXXX'  , :input_html => { :class => 'span2 validate[required,custom[onlyNumberSp],minSize[9]]'}  %>
+    	</div>
+		<div class="span2">		
+			<%= f.input :cliente_fax, :label=>"fax", placeholder: '9XXXXXXXX' , :input_html => { :class => 'span2 validate[custom[onlyNumberSp]]'}  %>
+    	</div>
+		<div class="span2">				
+			<% if @precontrato.cliente_email%>
+    			<%= f.input :cliente_email, :label=>"e-mail", placeholder: 'xxx@xx.xx' , :input_html => { :class => 'span2 validate[required,custom[email]]'}  %>
+			<% else %>
+				<%= f.input :cliente_email, :label=>"e-mail", placeholder: 'xxx@xx.xx' , :input_html => { :class => 'span2 validate[required,custom[email]]' ,  value: @user.email}  %>
+			<% end %>
+    	</div>
+    </div>    
+  </div>
+  <%= f.input :titular_elmismo , :value => '1', :as=>:hidden %>
+  <%= f.input :datossuministro_elmismo  , :value => '1', :as=>:hidden %>
+  <%= f.input :cliente_apoderado  , :value => '0', :as=>:hidden  %>
+  <%= f.input :esprimera_ocupacion , :value => '0', :as=>:hidden   %>
+  <%= f.input :suministro_cambio  , :value => '0', :as=>:hidden  %>
+
+
+
+      </div>
+      <!-- Main hero unit for a primary marketing message or call to action
+      -->
+      <!-- Example row of columns -->
+	<p>
+    <%= link_to '<< Anterior',  previous_wizard_path, class:"btn-primary btn" %> <%= f.submit "Siguiente paso >>", class:"btn-primary btn"%>
+  </p>
+<% end %>
+      <div class="row">
+        <div class="span4">
+          <h2>
+            Sin papel
+          </h2>
+          <p>
+            En Yelou no utilizamos papel, contratación, facturación y todos los procesos son electrónicos y por internet.
+          </p>
+        </div>
+        <div class="span4">
+          <h2>
+            Contratación
+          </h2>
+          <p>
+            El proceso de contratación lo puedes realizar todo seguido o en varias fases, ya que tus datos se guardarán, así como tus documentos para que puedas retomar el proceso en cualquier momento&nbsp;
+          </p>
+        </div>
+        <div class="span4">
+          <h2>
+            Contacto
+          </h2>
+          <p>
+            Para ofrecerte el mejor servicio de atención al cliente, podrás contactar con nosotros por teléfono y a través de tu cuenta de cliente .
+          </p>
+        </div>
+      </div>
+      <hr>
+      <footer>
+
+      </footer>
+
+
+<script type="text/javascript">
+
+
+
+
+
+
+</script>

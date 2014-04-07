@@ -1,0 +1,177 @@
+<%= tinymce_assets %>
+
+<script>
+$(function () {
+	$('.form-inputs').tooltip();
+});
+
+        tinymce.init({selector:'textarea.tinymce'});
+
+</script>
+
+<style>
+select, input[type="file"] {
+    width: 100px;
+}
+</style>
+
+<%= simple_form_for(@huerto , :html => { :class => 'vertical' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs" id="huerto">
+  	<div class="row">
+
+	  	<div class="span3">
+	   		<%= f.input :agrupacion %>
+	    </div>    	
+    </div>
+    <div class="row">
+	    <div class="span3">
+			<div class="control-group">
+			    <%= f.input :municipio %>
+			    <%= f.input :provincia %>
+			    <%= f.input :comunidad %>
+	   		</div>
+	    </div>
+	    <div class="span3">
+			<div class="control-group">
+		        <%= f.input :x %>
+		    	<%= f.input :y %>
+	        </div>
+	    </div>
+	   	<div class="span3">
+	        
+	    </div>
+    </div>
+   
+	<div class="row">
+	    <div class="span9">
+		    <%= f.input :descripcion, :input_html => {:style=> 'width: 100%', :rows => '20', :class => "tinymce"} %>
+		    <%= tinymce %>
+		</div>
+	</div>
+
+	<div class="row">		
+		<div class="span3">
+				<% if @huerto.foto01 %>
+				<div><span></span><span><img id="img01" src="<%=@huerto.foto01%>"></img></span></div>
+				<% else %>
+				<div><span></span><span><img id="img01" src="https://s3-eu-west-1.amazonaws.com/yelou/huertos/solautofes/4983425-paneles-solares-en-la-planta-de-energia-para-la-energia-renovable.jpg"></img></span></div>
+				<% end %>
+		</div>
+		<div class="span3">
+				<% if @huerto.foto02 %>
+				<div><span></span><span><img id="img02" src="<%=@huerto.foto02%>"></img></span></div>
+				<% else %>
+				<div><span></span><span><img id="img02" src="https://s3-eu-west-1.amazonaws.com/yelou/huertos/solautofes/paneles_solares.jpg"></img></span></div>
+				<% end %>			
+		</div>
+		<div class="span3">
+				<% if @huerto.foto03 %>
+				<div><span></span><span><img id="img03"  src="<%=@huerto.foto03%>"></img></span></div>
+				<% else %>
+				<div><span></span><span><img id="img03" src="https://s3-eu-west-1.amazonaws.com/yelou/huertos/solautofes/paneles_solares2.jpg"></img></span></div>
+				<% end %>			
+		</div>
+	</div>	
+	<div class="row">
+		    <div class="span3"><%= f.input :foto01 %></div>	
+		    <div class="span3"><%= f.input :foto02 %></div>	
+		    <div class="span3"><%= f.input :foto03 %></div>	    
+	</div>
+	<div class="row">	
+		<div class="span3">	    
+		<a href="#myModal"  class="btn" data-toggle="modal">Cargar Imágenes</a>		    	
+		</div>
+
+	</div>
+  </div>
+  
+  
+
+  <div class="form-actions">
+  	
+    <%= f.button :submit, "Actualizar Huerto", class:"btn-primary" %>
+  </div>
+<% end %>
+
+			    <!-- Button to trigger modal -->
+			     
+			    <!-- Modal imagen 1-->
+			    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			    <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			    <h3 id="myModalLabel">Cargar Imágenes</h3>
+			    </div>
+			    <div class="modal-body">
+			    	<div class="row">
+				    	<div class="span2">
+							<%= s3_uploader_form  callback_param: "model[image_url]", id: "s3-uploader01" do %>
+							  <%= file_field_tag :file, multiple: false %>  
+							<% end %><span id="spanfile01">...</span>
+							
+							<script id="template-upload" type="text/x-tmpl">
+							<div id="file-{%=o.unique_id%}" class="upload">
+							  Cargando el archivo: {%=o.name%}
+							  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+							</div>
+							</script>
+						</div>
+				    	<div class="span2">
+							<% if @huerto.foto01 %>
+							<div><span></span><span><img id="img011" height="42" src="<%=@huerto.foto01%>"></img></span></div>
+							<% else %>
+							<div><span></span><span><img id="img011" height="40" src="https://s3-eu-west-1.amazonaws.com/yelou/huertos/solautofes/4983425-paneles-solares-en-la-planta-de-energia-para-la-energia-renovable.jpg"></img></span></div>
+							<% end %>
+						</div>						
+					</div>
+			    	<div class="row">
+				    	<div class="span2">					
+					<%= s3_uploader_form  callback_param: "model[image_url]", id: "s3-uploader02" do %>
+					  <%= file_field_tag :file, multiple: false %>  
+					<% end %><span id="spanfile02">...</span>
+					
+					<script id="template-upload" type="text/x-tmpl">
+					<div id="file-{%=o.unique_id%}" class="upload">
+					  Cargando el archivo: {%=o.name%}
+					  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+					</div>
+					</script>
+						</div>
+				    	<div class="span2">
+							<% if @huerto.foto02 %>
+							<div><span></span><span><img id="img022" height="42" src="<%=@huerto.foto02%>"></img></span></div>
+							<% else %>
+							<div><span></span><span><img id="img022" height="40" src="https://s3-eu-west-1.amazonaws.com/yelou/huertos/solautofes/4983425-paneles-solares-en-la-planta-de-energia-para-la-energia-renovable.jpg"></img></span></div>
+							<% end %>
+						</div>						
+					</div>					
+			    	<div class="row">
+				    	<div class="span2">
+					<%= s3_uploader_form  callback_param: "model[image_url]", id: "s3-uploader03" do %>
+					  <%= file_field_tag :file, multiple: false %>  
+					<% end %><span id="spanfile03">...</span>
+					
+					<script id="template-upload" type="text/x-tmpl">
+					<div id="file-{%=o.unique_id%}" class="upload">
+					  Cargando el archivo: {%=o.name%}
+					  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+					</div>
+					</script>					
+						</div>
+				    	<div class="span2">
+							<% if @huerto.foto03 %>
+							<div><span></span><span><img id="img033" height="42" src="<%=@huerto.foto03%>"></img></span></div>
+							<% else %>
+							<div><span></span><span><img id="img033" height="40" src="https://s3-eu-west-1.amazonaws.com/yelou/huertos/solautofes/4983425-paneles-solares-en-la-planta-de-energia-para-la-energia-renovable.jpg"></img></span></div>
+							<% end %>
+						</div>						
+					</div>					
+					
+			    </div>
+			    <div class="modal-footer">
+			    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+			    </div>
+			    </div>
+		    
+

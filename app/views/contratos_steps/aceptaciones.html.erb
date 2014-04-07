@@ -1,0 +1,79 @@
+
+<h3 class="titulo">Aceptaciones</h3>
+     <div class="hero-unit">
+    
+<%= simple_form_for @precontrato, :url => wizard_path, :method => :put, :html => { :class => 'form-vertical', :id => "form_id" }  do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  <div class= "form-vertical">
+  	<div class="row">	
+  	<label class="checkbox">
+		<%= f.input :aceptaciones_aceptoterminoscontratacion, :label=> false, input_html: { checked: true , :class=>"validate[required] checkbox"}  %>
+		<%= f.label :aceptaciones_aceptoterminoscontratacion, "Acepto los términos de Contratación online y las condiciones particulares" %>	
+	</label>
+	</div>
+  	<div class="row">	
+  	<label class="checkbox">
+		<%= f.input :aceptaciones_aceptoterminosgenerales, :label=> false, input_html: { checked: true , :class=>"validate[required] checkbox"}  %>
+		<%= f.label :aceptaciones_aceptoterminosgenerales, "Acepto los Términos Generales del Contrato" %>	
+	</label>
+	</div>
+  	<div class="row">	
+  	<label class="checkbox">
+		<%= f.input :aceptaciones_aceptoefactura, :label=> false, input_html: { checked: true , :class=>"validate[required] checkbox"}  %>
+		<%= f.label :aceptaciones_aceptoefactura, "Acepto la facturación electrónica y recibir la factura exclusivamente en soporte electrónico" %>	
+	</label>
+	</div>
+  	<div class="row">	
+  	<label class="checkbox">
+		<%= f.input :aceptaciones_aceptocontratoelectronico, :label=> false, input_html: { checked: true , :class=>"validate[required] checkbox"}  %>
+		<%= f.label :aceptaciones_aceptocontratoelectronico, "Acepto la contratación electrónica" %>	
+	</label>
+	</div>	
+
+
+  </div>
+      </div>
+</div>
+      <!-- Main hero unit for a primary marketing message or call to action
+      -->
+      <!-- Example row of columns -->
+	<p>
+    <%= link_to '<< Anterior',  previous_wizard_path, class:"btn-primary btn" %> <%= f.submit "Siguiente paso >>", class:"btn-primary btn"%>
+  </p>
+<% end %>
+      <div class="row">
+        <div class="span4">
+          <h2>
+            Sin papel
+          </h2>
+          <p>
+            En Yelou no utilizamos papel, contratación, facturación y todos los procesos son electrónicos y por internet.
+          </p>
+        </div>
+        <div class="span4">
+          <h2>
+            Contratación
+          </h2>
+          <p>
+            El proceso de contratación lo puedes realizar todo seguido o en varias fases, ya que tus datos se guardarán, así como tus documentos para que puedas retomar el proceso en cualquier momento&nbsp;
+          </p>
+        </div>
+        <div class="span4">
+          <h2>
+            Contacto
+          </h2>
+          <p>
+            Para ofrecerte el mejor servicio de atención al cliente, podrás contactar con nosotros por teléfono y a través de tu cuenta de cliente .
+          </p>
+        </div>
+      </div>
+      <hr>
+      <footer>
+
+      </footer>
+
+
+
+

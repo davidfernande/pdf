@@ -1,0 +1,24 @@
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal', :id => "form_id" }) do |f| %>
+
+
+			<form class="form-horizontal" action='' method="POST">
+			  <fieldset>
+			    <div id="legend">
+			      <h2 class="titulo">Acceder</h2>
+			    </div>
+			    <div class="control-group">
+			        <%= f.error_notification %>
+			    	<%= display_base_errors resource %>
+			    	<%= f.input :email, label:"email", :autofocus => true, :input_html => { :class => 'span3 validate[required] input-xlarge'} %>
+					<%= f.input :password, label:"Contraseña", :input_html => { :class => 'span3 validate[required]'} %>
+  					<%= f.input :remember_me, label:"Recordarme" , :input_html => {:checked => 'checked'} , :as => :boolean if devise_mapping.rememberable? %>			      
+			      <div class="controls">
+			      	 <%= f.button :submit, "Acceder", :class => 'btn-primary btn-success' %>
+			      	 
+			      </div>
+			      <%= render "devise/shared/links" %>
+			    </div>
+			  </fieldset>
+			</form>
+
+<% end %>

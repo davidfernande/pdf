@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= content_for?(:title) ? yield(:title) : "Yelou! luz, conectados al Sol" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Yelou! luz, conectados al Sol" %>">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+	<!--[if lt IE 9]>
+	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->    
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+    <script>
+		$(document).ready(function(){
+		    $("#form_id").validationEngine();
+		});
+	</script>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>	
+  </head>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <div class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container">
+          <%= render 'layouts/navigation' %>
+        </div>
+      </nav>
+    </div>
+    <div id="main" role="main">
+      <div class="container  span6 offset3">
+        <div class="content">
+           <div class="row">
+            <div class="span6">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+          </div>
+          <footer>
+          	<%= render 'layouts/pielegal' %>
+          </footer>
+        </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+  </body>
+</html>

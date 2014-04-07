@@ -1,0 +1,103 @@
+          <div class="row">
+			<div class="span12">
+				<h3> Tu contrato </h3>
+				<div class="tile">
+		  			<p><%=@contrato_nexus["cliente_nombre"] %> 
+		            <%=@contrato_nexus["cliente_apellido1"] %> 
+		            <%=@contrato_nexus["cliente_apellido2"] %>, 
+		  			DNI: <%= @contrato_nexus["cliente_nifniecif"] %></p> 
+					<p><%=@contrato_nexus["datossuministro_direccion"]%>, 
+					<%=@contrato_nexus["datossuministro_codigopostal"]%> - <%=@contrato_nexus["datossuministro_municipio"]%>, 
+					<%= @contrato_nexus["datossuministro_provincia"] %></p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+		 <div class="row">
+		 	<div class="span6">
+		 		<div class="well">
+
+					<dl class="dl-horizontal">
+						<dt><b>Datos de Contacto</b></dt> <dd>&nbsp</dd>			
+						<dt>email:</dt> <dd><%= @contrato_nexus["cliente_email"] %>&nbsp</dd> 
+						<dt>teléfono:</dt> <dd><%= @contrato_nexus["cliente_telefono"] %>&nbsp</dd> 
+						<dt>fax:</dt> <dd><%= @contrato_nexus["cliente_fax"] %>&nbsp</dd> 
+						<dt>&nbsp</dt><dd>&nbsp</dd>
+						<dt>&nbsp</dt><dd>&nbsp</dd>
+						<dt>&nbsp</dt><dd>&nbsp</dd>
+						<dt>&nbsp</dt><dd>&nbsp</dd>
+					</dl>
+				</div>
+			</div>
+		 	<div class="span6">
+		 		<div class="well">
+					<dl class="dl-horizontal">
+						<dt><b>Suministro</b></dt> <dd>&nbsp</dd>			
+						<dt>Planta solar:</dt> <dd><%= @contrato_nexus["suministro_codigonx"] %>&nbsp</dd>
+						<dt>Tipo:</dt> <dd><%= @contrato_nexus["suministro_tipousuario"] %>&nbsp</dd> 
+						<dt>Tarifa:</dt> <dd><%= @contrato_nexus["suministro_tarifa"] %>&nbsp</dd> 
+						<dt>Potencia:</dt> <dd><%= @contrato_nexus["datossuministro_potencia"] %>&nbsp</dd>
+						<dt>Consumo:</dt> <dd><%= @contrato_nexus["datossuministro_consumoestimado"] %>&nbsp</dd>
+						<dt>Cuota:</dt> <dd><%= "" %>&nbsp</dd>
+						<dt>CUPS:</dt> <dd><%= @contrato_nexus["suministro_cups"] %>&nbsp</dd>
+					</dl>				
+				</div>
+			</div>
+			</div>
+
+
+          <div class="row">
+			<div class="span6">
+				<div class="well">
+				<h3> Evolución de tus facturas </h3>
+				<img src="https://s3.amazonaws.com/jetstrap-site/images/website/index/what_icon.png" title="">
+				<p> This is something. </p>
+				</div>
+			</div>
+
+
+			<div class="span6">
+				<div class="well">
+				<h3> CO2 no emitido </h3>
+				<img src="https://s3.amazonaws.com/jetstrap-site/images/website/index/what_icon.png" title="">
+				<p> This is something. </p>
+				</div>
+                        
+			</div>
+
+
+
+
+			<div class="span12">
+				<div class="well">
+				<h3> Comparte Yelou!luz </h3>
+				
+<div class="sharethis-wrapper">
+	<span st_url="http://www.yelouluz.com" st_title="@yelouluz Conecta tu hogar al Sol" class="st_twitter_large" displaytext="twitter"></span>
+	<span st_url="http://www.yelouluz.com" st_title="@yelouluz Conecta tu hogar al Sol" class="st_facebook_large" displaytext="facebook"></span>
+	<span st_url="http://www.yelouluz.com" st_title="@yelouluz Conecta tu hogar al Sol" class="st_googleplus_large" displaytext="googleplus"></span>
+	<span st_url="http://www.yelouluz.com" st_title="@yelouluz Conecta tu hogar al Sol" class="st_linkedin_large" displaytext="linkedin"></span>
+	<span st_url="http://www.yelouluz.com" st_title="@yelouluz Conecta tu hogar al Sol" class="st_evernote_large" displaytext="evernote"></span>
+	<span st_url="http://www.yelouluz.com" st_title="@yelouluz Conecta tu hogar al Sol" class="st_email_large" displaytext="email"></span>
+	<span st_url="http://www.yelouluz.com" st_title="@yelouluz Conecta tu hogar al Sol" class="st_sharethis_large" displaytext="sharethis"></span>
+	<span st_url="http://www.yelouluz.com" st_title="@yelouluz Conecta tu hogar al Sol" class="st_pinterest_large" displaytext="pinterest"></span>
+	<script type='text/javascript'>var switchTo5x = false;var __st_loadLate = true;</script>
+	<script type='text/javascript' src='http://w.sharethis.com/button/buttons.js'></script>
+	<script type='text/javascript'>stLight.options({"publisher":"dr-806578af-58ed-8594-c013-f9a66b093d9"});</script>
+</div>    
+
+				</div>
+                        
+			</div>
+          </div>
+
+      <hr>
+      <footer>
+
+      </footer>
+

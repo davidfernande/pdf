@@ -1,0 +1,13 @@
+<h2 class="titulo">Olvidaste tu contraseña?</h2>
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :id => "form_id" }) do |f| %>
+  <%= f.error_notification %>
+  	<div class="row">
+	  	<div class="span4">
+	  		<%= f.input :email, label:"introduce tu direción de email", :autofocus => true, :input_html => { :class => 'span3 validate[required]'}  %>
+
+  		</div>
+  	</div>
+	<%= f.button :submit, "Resetear mi contraseña", :class => 'btn-primary'  %>  
+
+<% end %>
+<%= render "devise/shared/links" %>

@@ -1,0 +1,75 @@
+<div class="page-header">
+
+  <%= link_to '/contratos_steps/bienvenido', :class => 'btn btn-primary' do %>
+  <% session.delete(:precontrato_id) %>
+    <i class="icon-plus icon-white"></i>
+    Nuevo Contrato
+  <% end %>
+  <h1>contratos activos</h1>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Suministro cups</th>
+      <th>Suministro Potencia</th>
+
+      <th>Cliente nombre</th>
+      <th>Cliente apellido1</th>
+      <th>Cliente apellido2</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+<% @contratos.each do |contrato| %>
+    <tr>
+      <td><%= contrato.suministro_cups %></td>
+      <td><%= contrato.suministro_tarifa %></td>
+      <td><%= contrato.cliente_nombre %></td>
+      <td><%= contrato.cliente_apellido1 %></td>
+      <td><%= contrato.cliente_apellido2 %></td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<div class="page-header">
+
+  <h1>precontratos</h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Cups</th>
+      <th>Potencia</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Apellido</th>
+
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @precontratos.each do |precontrato| %>
+    <tr>
+      <td><%= precontrato.suministro_cups %></td>
+      <td><%= precontrato.suministro_tarifa %></td>
+      <td><%= precontrato.cliente_nombre %></td>
+      <td><%= precontrato.cliente_apellido1 %></td>
+      <td><%= precontrato.cliente_apellido2 %></td>
+ 
+	  <% if precontrato.finalizado != true %>
+      		<td><%= link_to 'Continuar', edit_contratos_step_path(:continuar, :precontrato_id => precontrato.id ) %></td>
+      		<td><%= link_to 'Borrar', precontrato, confirm: 'Estás seguro?', method: :delete %></td>
+      <% else %>
+            <td>finalizado</td>
+      		<td>enviado</td>
+      <% end %>
+    </tr>
+<% end %>
+  </tbody>
+</table>

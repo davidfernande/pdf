@@ -1,0 +1,40 @@
+<div class="page-header">
+  <%= link_to new_precontrato_path, :class => 'btn btn-primary' do %>
+    <i class="icon-plus icon-white"></i>
+    New Precontrato
+  <% end %>
+  <h1>precontratos</h1>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>cups</th>
+      <th>tarifa</th>
+      <th>tipousuario</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Apellido</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @precontratos.each do |precontrato| %>
+    <tr>
+      <td><%= precontrato.suministro_cups %></td>
+      <td><%= precontrato.suministro_tarifa %></td>
+      <td><%= precontrato.suministro_tipousuario %></td>
+      <td><%= precontrato.cliente_nombre %></td>
+      <td><%= precontrato.cliente_apellido1 %></td>
+      <td><%= precontrato.cliente_apellido2 %></td>
+ 
+      <td><%= link_to 'Mostrar', precontrato %></td>
+      <td><%= link_to 'Editar', edit_precontrato_path(precontrato) %></td>
+      <td><%= link_to 'Borrar', precontrato, confirm: 'Estás seguro?', method: :delete %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

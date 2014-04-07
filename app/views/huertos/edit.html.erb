@@ -1,0 +1,13 @@
+<div class="page-header">
+  <%= link_to huertos_path, :class => 'btn btn-primary' do %>
+    <i class="icon-list-alt icon-white"></i>
+    Huertos
+  <% end %>
+  <%= link_to @huerto, :class => 'btn btn-primary' do %>
+    <i class="icon-info-sign icon-white"></i>
+    Ver
+  <% end %>
+  <h1 class="titulo">Huerto</h1>
+</div>
+
+<%= render 'form' %>
