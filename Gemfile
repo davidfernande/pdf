@@ -58,7 +58,7 @@ gem 's3_direct_upload'
 gem 'tinymce-rails'
 gem 'mandrill_mailer'
 
-gem 'pdftk_form'
+gem 'pdf-forms'
 
 group :development do
   gem 'sqlite3'

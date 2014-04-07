@@ -5,7 +5,7 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   match '/422' => 'errors#server_error'
   match '/500' => 'errors#server_error'
 
-
+  match '/pdf' => "home#generate_pdf", :as => :generate_pdf
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
