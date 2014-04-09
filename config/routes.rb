@@ -33,7 +33,7 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
     root :to => 'panels#index'
   end
   
-  root :to => "home#index"
+  root :to => "home#index" , :as => :home 
 
   devise_for :users
   resources :users

@@ -1,12 +1,10 @@
 source 'http://rubygems.org'
 ruby '1.9.3'
 gem 'rails', '3.2.11'
-gem 'pg' , '~> 0.14.1'
+
+gem 'pg' , '~> 0.14.1', :group => [:production, :staging]
+
 #gem 'heroku'
-
-#gem 's3_direct_upload'
-
-
 gem 'jquery-rails' #, '2.1'
 gem "jquery-ui-rails" #, "2.0.2" o 3.0.1
 #gem "jquery-ui-rails", '~> 4.0.0'
@@ -23,7 +21,7 @@ gem 'filepicker-rails'
 
 gem 'bootstrap-generators' , '~> 2.3.1.1'
 #gem 'jquery-rails', '~> 2.1'
-gem "unicorn", ">= 4.3.1"
+#gem "unicorn", ">= 4.3.1"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "database_cleaner", ">= 1.0.0.RC1", :group => :test
 gem "email_spec", ">= 1.4.0", :group => :test
@@ -60,6 +58,5 @@ gem 'mandrill_mailer'
 
 gem 'pdf-forms'
 
-group :development do
-  gem 'sqlite3'
-end
+gem 'sqlite3', :group => [:development, :test]
+

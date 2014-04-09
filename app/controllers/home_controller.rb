@@ -3,20 +3,12 @@ class HomeController < ApplicationController
   #before_filter :finduser
   
   def generate_pdf
-    #adjust the pdftk path to suit your pdftk installation (Mirar en Heroku)
-    #:data_format => 'XFdf'           PdfForms::XFdf.new
-    
-    pdftk = PdfForms.new(ENV['PDFTK_PATH'] || '/usr/local/bin/pdftk')
-    #fdf = PdfForms.new::XFdf :campo1=>"Hola"
-    #puts fdf.to_pdf_data
-    #fdf.fill_form 'C:\Test.pdf', 'myform.pdf', @fields.campo1 => 'Esto funciona...',:data_format=>'XFdf'
-    #fdf.save_to 'C:\file.pdf'
-    
-    #add :data_format => 'XFdf' option to generate XFDF instead of FDF when filling a form    
-    @fields = pdftk.get_field_names("#{Rails.root}/public/Test.pdf")
-    
-    #puts "CAPTUTA LOS FIELDS_NAMES"
-    pdftk.fill_form '#{Rails.root}/public/Test.pdf', '#{Rails.root}/public/Myform.pdf', @fields.campo1 => 'Funciona'
+    #adjust the pdftk path to suit your pdftk installation (Mirar en Heroku)        
+    pdftk = PdfForms.new(ENV['PDFTK_PATH'] || "#{Rails.root}/pdf/vendor/pdftk/bin/pdftk.exe")     
+           
+    #pdftk.get_field_names("#{Rails.root}/public/Test.pdf")
+        
+    pdftk.fill_form "#{Rails.root}/public/Test.pdf", "#{Rails.root}/pdf/contratos/MyformWindows.pdf", :campo1 => 'Tambien Funciona', :campo2 => '77321804Z' 
     
     redirect_to home_path
     
